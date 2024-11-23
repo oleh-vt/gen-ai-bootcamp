@@ -95,11 +95,6 @@
             <artifactId>semantickernel-settings-loader</artifactId>
             <version>0.2.13-alpha</version>
         </dependency>
-        <dependency>
-            <groupId>com.azure</groupId>
-            <artifactId>azure-ai-openai</artifactId>
-            <version>1.0.0-beta.11</version>
-        </dependency>
     </dependencies>
 
     <build>

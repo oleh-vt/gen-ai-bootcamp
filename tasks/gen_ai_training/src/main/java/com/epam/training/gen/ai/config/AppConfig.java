@@ -16,14 +16,11 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    ChatCompletionService chatCompletionService(
-            @Value("${client-openai-endpoint}") String clientEndpoint,
-            @Value("${client-openai-key}") String clientKey,
-            @Value("${client-openai-deployment-name}") String deploymentName
-
-    ) {
+    ChatCompletionService chatCompletionService(@Value("${client-openai-endpoint}") String clientEndpoint,
+                                                @Value("${client-openai-key}") String clientKey,
+                                                @Value("${client-openai-deployment-name}") String deploymentName) {
         return OpenAIChatCompletion.builder()
-                .withDeploymentName(deploymentName)
+                .withModelId(deploymentName)
                 .withOpenAIAsyncClient(
                         new OpenAIClientBuilder()
                                 .endpoint(clientEndpoint)

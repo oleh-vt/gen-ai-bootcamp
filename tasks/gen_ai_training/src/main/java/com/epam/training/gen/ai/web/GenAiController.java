@@ -16,6 +16,7 @@ public class GenAiController {
         this.conversationService = conversationService;
     }
 
+
     @PostMapping("/conversations")
     public Reply processPrompt(@RequestBody Prompt prompt) {
         return new Reply(conversationService.reply(prompt.input()));
