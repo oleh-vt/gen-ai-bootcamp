@@ -1,7 +1,6 @@
 package com.epam.training.gen.ai.service;
 
-import com.epam.training.gen.ai.model.PromptSettings;
-
 public interface ConversationService {
-    String reply(String prompt , PromptSettings promptSettings);
+    String reply(String prompt);
+    String reply(String prompt , Integer temperature);
 }
