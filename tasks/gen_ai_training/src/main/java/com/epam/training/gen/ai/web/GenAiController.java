@@ -26,6 +26,11 @@ public class GenAiController {
      *                      "input": "tell me a joke"
      *                    }
      * @param temperature LLM temperature setting in range from 0 to 100
+     * <p>
+     *                    FINDINGS:
+     *                    The temperature value affects the LLM to generate either more focused
+     *                    or more creative response. The higher temperature value, the more 'creative' responses are,
+     *                    although in case of DIAL it seems to work opposite: the higher value, the more concise response
      * @return LLM response
      */
     @PostMapping("/conversations")
