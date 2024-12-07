@@ -12,6 +12,9 @@ import com.microsoft.semantickernel.services.chatcompletion.ChatHistory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RestClient;
+import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.context.annotation.SessionScope;
 
 @Configuration
@@ -39,7 +42,6 @@ public class AppConfig {
                 .build();
     }
 
-
     @Bean
     @SessionScope
     ChatHistory chatHistory() {
@@ -51,6 +53,20 @@ public class AppConfig {
         return new InvocationContext.Builder()
                 .withReturnMode(InvocationReturnMode.LAST_MESSAGE_ONLY)
                 .withToolCallBehavior(ToolCallBehavior.allowAllKernelFunctions(Boolean.TRUE))
+                .build();
+    }
+
+    @Bean
+    RestClient restClient(
+            @Value("${client-openai-endpoint}") String clientEndpoint,
+            @Value("${client-openai-key}") String clientKey
+    ) {
+        return RestClient.builder()
+                .baseUrl(clientEndpoint)
+                .defaultHeaders(httpHeaders -> {
+                    httpHeaders.add("Api-Key", clientKey);
+                    httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+                })
                 .build();
     }
 
