@@ -15,7 +15,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("conversations")
 @RequiredArgsConstructor
-public class GenAiController {
+public class ConversationController {
 
     private final ConversationService conversationService;
 
