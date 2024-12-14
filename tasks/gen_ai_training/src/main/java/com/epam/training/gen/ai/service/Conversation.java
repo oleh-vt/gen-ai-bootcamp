@@ -3,7 +3,9 @@ package com.epam.training.gen.ai.service;
 import com.epam.training.gen.ai.model.Prompt;
 import com.microsoft.semantickernel.Kernel;
 import com.microsoft.semantickernel.orchestration.InvocationContext;
+import com.microsoft.semantickernel.orchestration.InvocationReturnMode;
 import com.microsoft.semantickernel.orchestration.PromptExecutionSettings;
+import com.microsoft.semantickernel.orchestration.ToolCallBehavior;
 import com.microsoft.semantickernel.services.chatcompletion.ChatCompletionService;
 import com.microsoft.semantickernel.services.chatcompletion.ChatHistory;
 import com.microsoft.semantickernel.services.chatcompletion.ChatMessageContent;
@@ -42,7 +44,9 @@ public class Conversation {
     }
 
     private InvocationContext buildInvocationContext(Double temperature) {
-        InvocationContext.Builder invocationContextbuilder = InvocationContext.builder();
+        InvocationContext.Builder invocationContextbuilder = InvocationContext.builder()
+                .withReturnMode(InvocationReturnMode.LAST_MESSAGE_ONLY)
+                .withToolCallBehavior(ToolCallBehavior.allowAllKernelFunctions(Boolean.TRUE));
         if (temperature != null) {
             invocationContextbuilder.withPromptExecutionSettings(
                     PromptExecutionSettings.builder()

@@ -1,21 +1,22 @@
 package com.epam.training.gen.ai.service;
 
+import com.epam.training.gen.ai.plugin.CurrencyExchangePlugin;
 import com.microsoft.semantickernel.Kernel;
 import com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatCompletion;
+import com.microsoft.semantickernel.plugin.KernelPluginFactory;
 import com.microsoft.semantickernel.services.chatcompletion.ChatCompletionService;
 import com.microsoft.semantickernel.services.chatcompletion.ChatHistory;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
+@RequiredArgsConstructor
 public class ConversationFactory {
 
     private final OpenAIChatCompletion.Builder chatCompletionBuilder;
-
-    public ConversationFactory(OpenAIChatCompletion.Builder chatCompletionBuilder) {
-        this.chatCompletionBuilder = chatCompletionBuilder;
-    }
+    private final CurrencyExchangePlugin currencyExchangePlugin;
 
     public Conversation create(String deploymentName) {
         ChatCompletionService chatCompletionService = chatCompletionBuilder
@@ -34,6 +35,7 @@ public class ConversationFactory {
     private Kernel kernel(ChatCompletionService chatCompletionService) {
         return Kernel.builder()
                 .withAIService(ChatCompletionService.class, chatCompletionService)
+                .withPlugin(KernelPluginFactory.createFromObject(currencyExchangePlugin, CurrencyExchangePlugin.class.getSimpleName()))
                 .build();
     }
 }
