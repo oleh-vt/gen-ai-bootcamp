@@ -1,0 +1,400 @@
+{
+  "base_currency": "USD",
+  "date": "2024-12-14",
+  "rates": [
+    {
+      "currency_code": "EUR",
+      "countries": [
+        "Austria",
+        "Belgium",
+        "Croatia",
+        "Cyprus",
+        "Estonia",
+        "Finland",
+        "France",
+        "Germany",
+        "Greece",
+        "Ireland",
+        "Italy",
+        "Latvia",
+        "Lithuania",
+        "Luxembourg",
+        "Malta",
+        "Netherlands",
+        "Portugal",
+        "Slovakia",
+        "Slovenia",
+        "Spain",
+        "Andorra",
+        "Monaco",
+        "San Marino",
+        "Vatican",
+        "Montenegro"
+      ],
+      "exchange_rate": 0.85
+    },
+    {
+      "currency_code": "GBP",
+      "countries": [
+        "United Kingdom"
+      ],
+      "exchange_rate": 0.75
+    },
+    {
+      "currency_code": "USD",
+      "countries": [
+        "United States of America"
+      ],
+      "exchange_rate": 1.0
+    },
+    {
+      "currency_code": "JPY",
+      "countries": [
+        "Japan"
+      ],
+      "exchange_rate": 110.5
+    },
+    {
+      "currency_code": "AUD",
+      "countries": [
+        "Australia"
+      ],
+      "exchange_rate": 1.35
+    },
+    {
+      "currency_code": "CAD",
+      "countries": [
+        "Canada"
+      ],
+      "exchange_rate": 1.25
+    },
+    {
+      "currency_code": "CZK",
+      "countries": [
+        "Czech Republic"
+      ],
+      "exchange_rate": 23.84
+    },
+    {
+      "currency_code": "CHF",
+      "countries": [
+        "Switzerland"
+      ],
+      "exchange_rate": 0.92
+    },
+    {
+      "currency_code": "CNY",
+      "countries": [
+        "China"
+      ],
+      "exchange_rate": 6.9
+    },
+    {
+      "currency_code": "SEK",
+      "countries": [
+        "Sweden"
+      ],
+      "exchange_rate": 9.2
+    },
+    {
+      "currency_code": "DKK",
+      "countries": [
+        "Denmark"
+      ],
+      "exchange_rate": 7.1
+    },
+    {
+      "currency_code": "ISK",
+      "countries": [
+        "Iceland"
+      ],
+      "exchange_rate": 138.83
+    },
+    {
+      "currency_code": "NZD",
+      "countries": [
+        "New Zealand"
+      ],
+      "exchange_rate": 1.45
+    },
+    {
+      "currency_code": "MXN",
+      "countries": [
+        "Mexico"
+      ],
+      "exchange_rate": 19.2
+    },
+    {
+      "currency_code": "SGD",
+      "countries": [
+        "Singapore"
+      ],
+      "exchange_rate": 1.35
+    },
+    {
+      "currency_code": "HKD",
+      "countries": [
+        "Hong Kong"
+      ],
+      "exchange_rate": 7.8
+    },
+    {
+      "currency_code": "NOK",
+      "countries": [
+        "Norway"
+      ],
+      "exchange_rate": 9.6
+    },
+    {
+      "currency_code": "KRW",
+      "countries": [
+        "South Korea"
+      ],
+      "exchange_rate": 1300
+    },
+    {
+      "currency_code": "TRY",
+      "countries": [
+        "Turkey"
+      ],
+      "exchange_rate": 27.0
+    },
+    {
+      "currency_code": "BRL",
+      "countries": [
+        "Brazil"
+      ],
+      "exchange_rate": 5.2
+    },
+    {
+      "currency_code": "ZAR",
+      "countries": [
+        "South Africa"
+      ],
+      "exchange_rate": 18.5
+    },
+    {
+      "currency_code": "INR",
+      "countries": [
+        "India"
+      ],
+      "exchange_rate": 83.0
+    },
+    {
+      "currency_code": "IDR",
+      "countries": [
+        "Indonesia"
+      ],
+      "exchange_rate": 15000
+    },
+    {
+      "currency_code": "PHP",
+      "countries": [
+        "Philippines"
+      ],
+      "exchange_rate": 56.0
+    },
+    {
+      "currency_code": "MYR",
+      "countries": [
+        "Malaysia"
+      ],
+      "exchange_rate": 4.5
+    },
+    {
+      "currency_code": "VND",
+      "countries": [
+        "Vietnam"
+      ],
+      "exchange_rate": 24000
+    },
+    {
+      "currency_code": "SAR",
+      "countries": [
+        "Saudi Arabia"
+      ],
+      "exchange_rate": 3.75
+    },
+    {
+      "currency_code": "AED",
+      "countries": [
+        "United Arab Emirates"
+      ],
+      "exchange_rate": 3.67
+    },
+    {
+      "currency_code": "JOD",
+      "countries": [
+        "Jordan"
+      ],
+      "exchange_rate": 0.71
+    },
+    {
+      "currency_code": "KWD",
+      "countries": [
+        "Kuwait"
+      ],
+      "exchange_rate": 0.30
+    },
+    {
+      "currency_code": "OMR",
+      "countries": [
+        "Oman"
+      ],
+      "exchange_rate": 0.38
+    },
+    {
+      "currency_code": "BHD",
+      "countries": [
+        "Bahrain"
+      ],
+      "exchange_rate": 0.38
+    },
+    {
+      "currency_code": "IQD",
+      "countries": [
+        "Iraq"
+      ],
+      "exchange_rate": 1460
+    },
+    {
+      "currency_code": "CUP",
+      "countries": [
+        "Cuba"
+      ],
+      "exchange_rate": 24.0
+    },
+    {
+      "currency_code": "UYU",
+      "countries": [
+        "Uruguay"
+      ],
+      "exchange_rate": 43.5
+    },
+    {
+      "currency_code": "BOB",
+      "countries": [
+        "Bolivia"
+      ],
+      "exchange_rate": 6.9
+    },
+    {
+      "currency_code": "PYG",
+      "countries": [
+        "Paraguay"
+      ],
+      "exchange_rate": 7400
+    },
+    {
+      "currency_code": "GTQ",
+      "countries": [
+        "Guatemala"
+      ],
+      "exchange_rate": 7.7
+    },
+    {
+      "currency_code": "HNL",
+      "countries": [
+        "Honduras"
+      ],
+      "exchange_rate": 25.0
+    },
+    {
+      "currency_code": "SYP",
+      "countries": [
+        "Syria"
+      ],
+      "exchange_rate": 3025
+    },
+    {
+      "currency_code": "LYD",
+      "countries": [
+        "Libya"
+      ],
+      "exchange_rate": 4.5
+    },
+    {
+      "currency_code": "SDG",
+      "countries": [
+        "Sudan"
+      ],
+      "exchange_rate": 570
+    },
+    {
+      "currency_code": "TZS",
+      "countries": [
+        "Tanzania"
+      ],
+      "exchange_rate": 2320
+    },
+    {
+      "currency_code": "UGX",
+      "countries": [
+        "Uganda"
+      ],
+      "exchange_rate": 3700
+    },
+    {
+      "currency_code": "KES",
+      "countries": [
+        "Kenya"
+      ],
+      "exchange_rate": 136.5
+    },
+    {
+      "currency_code": "MZN",
+      "countries": [
+        "Mozambique"
+      ],
+      "exchange_rate": 65.0
+    },
+    {
+      "currency_code": "ETB",
+      "countries": [
+        "Ethiopia"
+      ],
+      "exchange_rate": 53.5
+    },
+    {
+      "currency_code": "XOF",
+      "countries": [
+        "Benin",
+        "Burkina Faso",
+        "Côte d'Ivoire",
+        "Guinea-Bissau",
+        "Mali",
+        "Niger",
+        "Senegal",
+        "Togo"
+      ],
+      "exchange_rate": 645
+    },
+    {
+      "currency_code": "XAF",
+      "countries": [
+        "Cameroon",
+        "Central African Republic",
+        "Chad",
+        "Republic of the Congo",
+        "Equatorial Guinea",
+        "Gabon"
+      ],
+      "exchange_rate": 655
+    },
+    {
+      "currency_code": "XCD",
+      "countries": [
+        "Anguilla",
+        "Antigua and Barbuda",
+        "Dominica",
+        "Grenada",
+        "Montserrat",
+        "St. Kitts and Nevis",
+        "St. Lucia",
+        "St. Vincent and the Grenadines"
+      ],
+      "exchange_rate": 2.7
+    }
+  ]
+}
+
