@@ -1,5 +1,6 @@
 package com.epam.training.gen.ai.config;
 
+import com.azure.ai.openai.OpenAIAsyncClient;
 import com.azure.ai.openai.OpenAIClientBuilder;
 import com.azure.core.credential.AzureKeyCredential;
 import com.epam.training.gen.ai.plugin.CurrencyExchangePlugin;
@@ -25,15 +26,18 @@ public class AppConfig {
     public static final String API_KEY = "Api-Key";
 
     @Bean
-    OpenAIChatCompletion.Builder chatCompletionService(@Value("${client-openai-endpoint}") String clientEndpoint,
-                                                       @Value("${client-openai-key}") String clientKey) {
+    OpenAIAsyncClient openAIAsyncClient(@Value("${client-openai-endpoint}") String clientEndpoint,
+                                        @Value("${client-openai-key}") String clientKey) {
+        return new OpenAIClientBuilder()
+                .endpoint(clientEndpoint)
+                .credential(new AzureKeyCredential(clientKey))
+                .buildAsyncClient();
+    }
+
+    @Bean
+    OpenAIChatCompletion.Builder chatCompletionService(OpenAIAsyncClient aiAsyncClient) {
         return OpenAIChatCompletion.builder()
-                .withOpenAIAsyncClient(
-                        new OpenAIClientBuilder()
-                                .endpoint(clientEndpoint)
-                                .credential(new AzureKeyCredential(clientKey))
-                                .buildAsyncClient()
-                );
+                .withOpenAIAsyncClient(aiAsyncClient);
     }
 
     @Bean
