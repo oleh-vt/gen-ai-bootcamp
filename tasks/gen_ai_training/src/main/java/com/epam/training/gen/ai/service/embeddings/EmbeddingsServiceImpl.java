@@ -3,8 +3,11 @@ package com.epam.training.gen.ai.service.embeddings;
 import com.azure.ai.openai.models.Embeddings;
 import com.epam.training.gen.ai.service.embeddings.repository.VectorStoreRepository;
 import com.epam.training.gen.ai.service.embeddings.vector.EmbeddingVectorService;
+import io.qdrant.client.grpc.Points.ScoredPoint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +29,7 @@ public class EmbeddingsServiceImpl implements EmbeddingsService {
     }
 
     @Override
-    public Object search(Object o) {
-        return null;
+    public List<ScoredPoint> search(String text, int limit) {
+        return vectorStoreRepository.search(create(text), limit);
     }
 }
