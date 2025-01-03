@@ -26,9 +26,22 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-bom</artifactId>
+                <version>1.69.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-bom</artifactId>
+                <version>4.28.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
 
     <dependencies>
         <dependency>
@@ -64,31 +77,26 @@
             <groupId>com.microsoft.semantic-kernel</groupId>
             <artifactId>semantickernel-experimental</artifactId>
         </dependency>
-
         <dependency>
             <groupId>io.qdrant</groupId>
             <artifactId>client</artifactId>
-            <version>1.11.0</version>
+            <version>1.12.0</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
-            <version>1.66.0</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
-            <version>1.66.0</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
-            <version>1.66.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>4.28.1</version>
         </dependency>
         <dependency>
             <groupId>com.microsoft.semantic-kernel</groupId>
