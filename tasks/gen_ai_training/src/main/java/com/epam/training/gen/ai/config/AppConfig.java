@@ -8,6 +8,8 @@ import com.epam.training.gen.ai.plugin.ExchangeRate;
 import com.epam.training.gen.ai.plugin.Rate;
 import com.google.gson.Gson;
 import com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatCompletion;
+import io.qdrant.client.QdrantClient;
+import io.qdrant.client.QdrantGrpcClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -65,6 +67,17 @@ public class AppConfig {
                     );
             return new CurrencyExchangePlugin(rates);
         }
+    }
+
+    @Bean
+    QdrantClient qdrantClient(QdrantConfigProperties configProperties) {
+        return new QdrantClient(
+                QdrantGrpcClient.newBuilder(
+                        configProperties.host(),
+                        configProperties.port(),
+                        configProperties.useTLS()
+                ).build()
+        );
     }
 
 }
