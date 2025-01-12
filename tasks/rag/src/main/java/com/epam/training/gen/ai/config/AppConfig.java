@@ -3,6 +3,8 @@ package com.epam.training.gen.ai.config;
 import com.azure.ai.openai.OpenAIAsyncClient;
 import com.azure.ai.openai.OpenAIClientBuilder;
 import com.azure.core.credential.AzureKeyCredential;
+import com.microsoft.semantickernel.aiservices.openai.textembedding.OpenAITextEmbeddingGenerationService;
+import com.microsoft.semantickernel.services.textembedding.TextEmbeddingGenerationService;
 import io.qdrant.client.QdrantClient;
 import io.qdrant.client.QdrantGrpcClient;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +23,15 @@ public class AppConfig {
                 .endpoint(clientEndpoint)
                 .credential(new AzureKeyCredential(clientKey))
                 .buildAsyncClient();
+    }
+
+    @Bean
+    TextEmbeddingGenerationService textEmbeddingGenerationService(OpenAIAsyncClient openAIAsyncClient) {
+        return OpenAITextEmbeddingGenerationService.builder()
+                .withOpenAIAsyncClient(openAIAsyncClient)
+                .withModelId("text-embedding-3-small-1")
+                .withDimensions(OpenAITextEmbeddingGenerationService.EMBEDDING_DIMENSIONS_SMALL)
+                .build();
     }
 
     @Bean

@@ -10,7 +10,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import static com.epam.training.gen.ai.service.embeddings.repository.QdrantRepository.COLLECTION_NAME;
+import static com.epam.training.gen.ai.repository.QdrantRepository.COLLECTION_NAME;
 
 @Slf4j
 @Component

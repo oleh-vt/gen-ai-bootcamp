@@ -10,10 +10,20 @@ import java.util.Map;
 @RestControllerAdvice
 public class ControllerExceptionHandler {
 
-    @ExceptionHandler(GenAiServiceException.class)
+    @ExceptionHandler(GenAiServiceClientException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Object handleServiceClientException(GenAiServiceClientException ex) {
+        return createResponse(ex.getMessage());
+    }
+
+    @ExceptionHandler(GenAiServiceException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Object handleConversationNotFound(GenAiServiceException ex) {
-        return Map.of("error", ex.getMessage());
+        return createResponse(ex.getMessage());
+    }
+
+    private static Map<String, String> createResponse(String ex) {
+        return Map.of("error", ex);
     }
 
 }
