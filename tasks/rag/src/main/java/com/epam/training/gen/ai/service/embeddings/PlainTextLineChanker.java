@@ -8,7 +8,7 @@ import java.util.List;
 @Component
 public class PlainTextLineChanker implements PlainTextChunker {
 
-    public static final int MAX_TOKENS_PER_LINE = 2000;
+    public static final int MAX_TOKENS_PER_LINE = 500;
 
     @Override
     public List<String> split(String text) {

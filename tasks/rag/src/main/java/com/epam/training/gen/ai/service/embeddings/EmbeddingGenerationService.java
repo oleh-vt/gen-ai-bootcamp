@@ -1,9 +1,8 @@
 package com.epam.training.gen.ai.service.embeddings;
 
-import com.epam.training.gen.ai.model.EmbeddingItem;
-
-import java.util.List;
+import com.microsoft.semantickernel.services.textembedding.Embedding;
+import reactor.core.publisher.Mono;
 
 public interface EmbeddingGenerationService {
-    List<EmbeddingItem> create(String text);
+    Mono<Embedding> generateEmbedding(String text);
 }

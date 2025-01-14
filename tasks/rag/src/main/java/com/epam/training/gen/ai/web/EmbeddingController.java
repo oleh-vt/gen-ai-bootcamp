@@ -4,6 +4,7 @@ import com.epam.training.gen.ai.exception.GenAiServiceClientException;
 import com.epam.training.gen.ai.service.embeddings.EmbeddingsService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
+@Slf4j
 @RestController
 @RequestMapping("embeddings")
 @RequiredArgsConstructor
@@ -22,6 +24,7 @@ public class EmbeddingController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     void create(@RequestParam MultipartFile file) {
+        log.info("File received for processing: name={}, size={}", file.getOriginalFilename(), file.getSize());
         validate(file);
         embeddingsService.create(readContent(file.getResource()));
     }

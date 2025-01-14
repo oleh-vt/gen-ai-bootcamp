@@ -3,13 +3,18 @@ package com.epam.training.gen.ai.config;
 import com.azure.ai.openai.OpenAIAsyncClient;
 import com.azure.ai.openai.OpenAIClientBuilder;
 import com.azure.core.credential.AzureKeyCredential;
+import com.microsoft.semantickernel.Kernel;
+import com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatCompletion;
 import com.microsoft.semantickernel.aiservices.openai.textembedding.OpenAITextEmbeddingGenerationService;
+import com.microsoft.semantickernel.services.chatcompletion.ChatCompletionService;
+import com.microsoft.semantickernel.services.chatcompletion.ChatHistory;
 import com.microsoft.semantickernel.services.textembedding.TextEmbeddingGenerationService;
 import io.qdrant.client.QdrantClient;
 import io.qdrant.client.QdrantGrpcClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.context.annotation.SessionScope;
 
 @Configuration
 public class AppConfig {
@@ -43,6 +48,27 @@ public class AppConfig {
                         configProperties.useTLS()
                 ).build()
         );
+    }
+
+    @Bean
+    @SessionScope
+    ChatHistory chatHistory() {
+        return new ChatHistory();
+    }
+
+    @Bean
+    ChatCompletionService chatCompletionService(OpenAIAsyncClient openAIAsyncClient) {
+        return OpenAIChatCompletion.builder()
+                .withOpenAIAsyncClient(openAIAsyncClient)
+                .withModelId("gpt-35-turbo")
+                .build();
+    }
+
+    @Bean
+    Kernel kernel(ChatCompletionService chatCompletionService) {
+        return Kernel.builder()
+                .withAIService(ChatCompletionService.class, chatCompletionService)
+                .build();
     }
 
 }
